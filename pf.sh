@@ -10,8 +10,8 @@ do
             pgrep -a "$OPTARG" > "$dateiname"
             ;;
         h) 
-            echo "PID   Befehl" > "$dateiname"
-            pgrep -a "$OPTARG" > "$dateiname"
+            echo "PID   Befehl" | tee "$dateiname"
+            pgrep -a "$OPTARG" >> "$dateiname"
             ;;
         *)
             ;;    
