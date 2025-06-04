@@ -12,10 +12,6 @@ gesucht=""
 # Flag, ob der Header mit angegeben werden soll oder nicht
 include_header=false
 
-# Nette Beschreibung 
-echo "Anzeige der Datei \"$dateiname\" mit den Prozessen die den String \"$gesucht\" enthalten:"
-echo ""
-
 # Auswertung der übergebenen Parameter
 while getopts ":n:h" opt; do
    case $opt in
@@ -48,6 +44,10 @@ if [ -z "$gesucht" ]; then
   echo "Fehler: -n <wert> ist erforderlich." >&2
   exit 1
 fi
+
+# Nette Beschreibung 
+echo "Anzeige der Datei \"$dateiname\" mit den Prozessen die den String \"$gesucht\" enthalten:"
+echo ""
 
 # Prüfen, ob der Header mit angegeben werden soll
 if [ "$include_header" = true ]; then
